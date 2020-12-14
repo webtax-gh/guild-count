@@ -30,13 +30,13 @@ app.get('/guildcount', function (req, res) {
     const data = new FormData();
     console.log(req.body)
     data.append('client_id', "715047504126804000");
-    data.append('client_secret', "no no no no");
+    data.append('client_secret', "no no no no no");
     data.append('grant_type', 'authorization_code');
     data.append('redirect_uri', "https://guildcount.triviabot.tech/guildcount");
     data.append('scope', 'identify');
     data.append('code', req.query.code);
 
-    fetch('https://discordapp.com/api/oauth2/token', {
+    fetch('https://discord.com/api/oauth2/token', {
         method: 'POST',
         body: data,
     })
@@ -49,20 +49,20 @@ app.get('/guildcount', function (req, res) {
                 }
             }
             axios
-                .get("https://discordapp.com/api/users/@me",config)
+                .get("https://discord.com/api/users/@me",config)
                 .then(response=>{
-                    var username = response.data.username
+                    const username = response.data.username
                     console.log(response.data.username)
                     axios
-                    .get("https://discordapp.com/api/users/@me/guilds",config)
+                    .get("https://discord.com/api/users/@me/guilds",config)
                     .then(response=>{
-                        var guildcount = response.data.length
+                        const guildcount = response.data.length
                         console.log(response.data.length)
                         if (err) {
                             console.error(err);
                             res.status(500).render('oops')
                         };
-                        var totals= {owner:0, community:0, partnered:0, discoverable:0, commerce:0, partnered:0, verified:0};
+                        const totals= {owner:0, community:0, partnered:0, discoverable:0, commerce:0, partnered:0, verified:0};
                         response.data.map(i =>{
                             if (i.owner) {
                                 totals['owner'] = totals['owner'] + 1
