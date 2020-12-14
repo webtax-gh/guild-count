@@ -12,15 +12,15 @@
       <br>
       You are the owner of <%= totals['owner'] %> guilds.
       <br>
-      <%= totals['community'] %> of the guilds you are in have community enabled (<%= Math.round(totals['community']/totals['owner'] * 100) %>%).
+      <%= totals['community'] %> of the guilds you are in have community enabled (<%= Math.round(totals['community']/guildcount * 100) %>%).
       <br>
-      <%= totals['partnered'] %> of the guilds you are in are partnered (<%= Math.round(totals['partnered']/totals['owner'] * 100) %>%).
+      <%= totals['partnered'] %> of the guilds you are in are partnered (<%= Math.round(totals['partnered']/guildcount * 100) %>%).
       <br>
-      <%= totals['discoverable'] %> of the guilds you are in are discoverable (<%= Math.round(totals['discoverable']/totals['owner'] * 100) %>%).
+      <%= totals['discoverable'] %> of the guilds you are in are discoverable (<%= Math.round(totals['discoverable']/guildcount * 100) %>%).
       <br>
-      <%= totals['commerce'] %> of the guilds you are in have commerce enabled (<%= Math.round(totals['commerce']/totals['owner'] * 100) %>%).
+      <%= totals['commerce'] %> of the guilds you are in have commerce enabled (<%= Math.round(totals['commerce']/guildcount * 100) %>%).
       <br>
-      <%= totals['verified'] %> of the guilds you are in are verified (<%= Math.round(totals['verified']/totals['owner'] * 100) %>%).
+      <%= totals['verified'] %> of the guilds you are in are verified (<%= Math.round(totals['verified']/guildcount * 100) %>%).
     </div>
   </div>
 <style>
