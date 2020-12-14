@@ -27,6 +27,10 @@ app.get('/', function (req, res) {
     }
 })
 
+app.get('/credits', function (req, res) {
+  res.render('credits');
+});
+
 app.get('/guildcount', function (req, res) {
     const data = new FormData();
     console.log(req.body)
