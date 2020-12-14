@@ -2,6 +2,7 @@ var express = require('express');
 var path = require('path')
 var app = express();
 var bodyParser = require('body-parser');
+var process = require('process');
 const fetch = require('node-fetch');
 const FormData = require('form-data');
 
@@ -30,7 +31,7 @@ app.get('/guildcount', function (req, res) {
     const data = new FormData();
     console.log(req.body)
     data.append('client_id', "715047504126804000");
-    data.append('client_secret', "no no no no no");
+    data.append('client_secret', process.env.client_secret);
     data.append('grant_type', 'authorization_code');
     data.append('redirect_uri', "https://guildcount.triviabot.tech/guildcount");
     data.append('scope', 'identify');
